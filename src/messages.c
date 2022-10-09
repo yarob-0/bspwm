@@ -292,7 +292,7 @@ void cmd_node(char **args, int num, FILE *rsp)
 			}
 			client_state_t cst;
 			bool alternate = false;
-			if ((*args)[0] == '~') {
+			if ((*args)[0] == '!') {
 				alternate = true;
 				(*args)++;
 			}
@@ -370,7 +370,7 @@ void cmd_node(char **args, int num, FILE *rsp)
 				cancel_presel(trg.monitor, trg.desktop, trg.node);
 			} else {
 				bool alternate = false;
-				if ((*args)[0] == '~') {
+				if ((*args)[0] == '!') {
 					alternate = true;
 					(*args)++;
 				}
@@ -385,7 +385,7 @@ void cmd_node(char **args, int num, FILE *rsp)
 						}
 					}
 				} else {
-					fail(rsp, "node %s: Invalid argument: '%s%s'.\n", *(args - 1), alternate?"~":"", *args);
+					fail(rsp, "node %s: Invalid argument: '%s%s'.\n", *(args - 1), alternate?"!":"", *args);
 					break;
 				}
 			}
